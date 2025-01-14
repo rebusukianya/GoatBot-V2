@@ -2,8 +2,8 @@ const fs = require("fs");
 
 module.exports = {
 	config: {
-		name: "approved",
-		author: "Jun",
+		name: "approve",
+		author: "Jun & Aljur",
 		countDown: 5,
 		role: 0,
 		category: "owner",
