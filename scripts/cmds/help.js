@@ -65,7 +65,7 @@ module.exports = {
 
 
 			const helpListImages = [
-				"https://i.imgur.com/8d6WbRJ.gif"
+				"https://i.imgur.com"
 			];
 
 
@@ -98,6 +98,35 @@ module.exports = {
 	│ Description: ${longDescription}
 	│ Other names: ${configCommand.aliases ? configCommand.aliases.join(", ") : "Do not have"}
 	│ Other names in your group: Do not have
+	│ Version: ${configCommand.version || "1.0"}
+	│ Role: ${roleText}
+	│ Time per command: ${configCommand.countDown || 1}s
+	│ Author: ${author}
+	├── Usage
+	│ ${usage}
+	├── Notes
+	│ The content inside <XXXXX> can be changed
+	│ The content inside [a|b|c] is a or b or c
+	╰━━━━━━━❖`;
+
+				await message.reply(response);
+			}
+		}
+	},
+};
+
+function roleTextToString(roleText) {
+	switch (roleText) {
+		case 0:
+			return "0 (All users)";
+		case 1:
+			return "1 (Group administrators)";
+		case 2:
+			return "2 (Admin bot)";
+		default:
+			return "Unknown role";
+	}
+}	│ Other names in your group: Do not have
 	│ Version: ${configCommand.version || "1.0"}
 	│ Role: ${roleText}
 	│ Time per command: ${configCommand.countDown || 1}s
